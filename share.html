@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="GBK">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+	<title>分享</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body,html{
+            height: 100%;
+        }
+        body{
+            background-image: url('assets/share_bg.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        #erweima{
+            width:5.05rem;
+            height:5.05rem;
+            position: absolute;
+            left:50%;
+            margin-left:-2.525rem;
+            bottom:4rem
+        }
+    </style>
+</head>
+<body>
+<img src="assets/erweima.jpg" id="erweima" alt=""/>
+<script>
+
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+</script>
+</body>
+</html>
